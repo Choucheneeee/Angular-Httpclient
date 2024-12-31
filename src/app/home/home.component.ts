@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
 export class HomeComponent implements OnInit,OnDestroy {
   d: any[] = [];  // 'd' is an array of 'any'
   student: any;
-  dataobservab!: Subscription;
+  // dataobservab!: Subscription;
   // dataoneobservab!: Subscription;
   profile={
     name: 'zzzzzz',
@@ -27,13 +27,18 @@ export class HomeComponent implements OnInit,OnDestroy {
   constructor(private share: ShareserviceService) {}
 
   ngOnInit(): void {
-      this.dataobservab = this.share.getstudents().subscribe((data: any) => {
-        console.log('Raw data:', data);
-        this.d = Array.isArray(data) ? data : []; // If the data is not an array, fallback to empty array
-      });
+      // this.dataobservab = this.share.getstudents().subscribe((data: any) => {
+      //   console.log('Raw data:', data);
+      //   this.d = Array.isArray(data) ? data : []; // If the data is not an array, fallback to empty array
+      // });
       
-      this.share.addNewStudent(this.profile).subscribe((data)=>{
+      // this.share.addNewStudent(this.profile).subscribe((data)=>{
+      //   console.log(data)
+      // })
+      this.share.DeleteStudent("676421fa7fc454331f551908").subscribe((data)=>{
+        console.log("deleted")
         console.log(data)
+        
       })
       // this.dataoneobservab = this.share.getOneStudent('676421fa7fc454331f551908').subscribe((data: any) => {
       //   console.log('Raw data2:', data);
@@ -42,9 +47,10 @@ export class HomeComponent implements OnInit,OnDestroy {
 
   }
   ngOnDestroy(): void {
-    this.dataobservab.unsubscribe()
+    // this.dataobservab.unsubscribe()
       
   }
+
 
   
 }
