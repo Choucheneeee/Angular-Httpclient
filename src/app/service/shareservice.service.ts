@@ -26,6 +26,7 @@ export class ShareserviceService {
     return this.http.post('http://localhost:3000/',profile);
   }
   DeleteStudent(id:any){
+    console.log("id,",id)
     return this.http.delete(`http://localhost:3000/student/${id}`, { responseType: 'text' });
   }
 }
