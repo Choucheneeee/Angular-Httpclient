@@ -14,7 +14,7 @@ export class ShareserviceService {
   .set('secret','chouchene')
   .set('clientKey','0000')
   header=new HttpHeaders()
-  .set("authorization","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjUzZGRhMWJmZmE1Zjg1MjNhOTVjMCIsImlhdCI6MTczNTgzOTI1NywiZXhwIjoxNzM1ODQyODU3fQ.5WVEcQIw5U2mirU61pe6DoIvFzrqAGCYUgjVMwH1-wA")
+  .set("authorization","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjUzZGRhMWJmZmE1Zjg1MjNhOTVjMCIsImlhdCI6MTczNTg0MzA0MCwiZXhwIjoxNzM1ODQ2NjQwfQ.L599L-Tr17RYJfv9_983xB8XfjlBCp093tjzmL9ewqI")
   linkbackend=environment.apiBaseUrl
   
   constructor(private http:HttpClient) {

@@ -5,6 +5,9 @@ import { HomeComponent } from "./home/home.component";
 import { CommonModule } from '@angular/common';
 import { ShareserviceService } from './service/shareservice.service';
 import { FormsModule, NgModel } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { HomeModule } from './home/home.module';
+import { AboutModule } from './about/about.module';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +16,9 @@ import { FormsModule, NgModel } from '@angular/forms';
     RouterOutlet,
     HttpClientModule,
     CommonModule,
-    HomeComponent,
+    AboutComponent,
+    HomeModule,
+    AboutModule,
     FormsModule
 ],
   templateUrl: './app.component.html',
