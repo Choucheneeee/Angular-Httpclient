@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ShareserviceService } from '../service/shareservice.service';
 import { Subscription } from 'rxjs';
+import { emit } from 'node:process';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +25,12 @@ export class HomeComponent implements OnInit,OnDestroy {
     phone:'123455'
 
   }
+  newst={
+    name:"choucha",
+    age:999,
+    email:"o@gmail.com",
+    phone:222
+  }
   constructor(private share: ShareserviceService) {}
 
   ngOnInit(): void {
@@ -32,18 +39,21 @@ export class HomeComponent implements OnInit,OnDestroy {
         this.d = Array.isArray(data) ? data : []; // If the data is not an array, fallback to empty array
       });
       
-      this.share.addNewStudent(this.profile).subscribe((data)=>{
-        console.log(data)
-      })
-      this.share.DeleteStudent('67653e701bffa5f8523a95c5').subscribe((data)=>{
-        console.log("deleted")
-        console.log(data)
+      // this.share.addNewStudent(this.profile).subscribe((data)=>{
+      //   console.log(data)
+      // })
+      // this.share.DeleteStudent('67653e7d9356b3dfe220c7fb').subscribe((data)=>{
+      //   console.log("deleted")
+      //   console.log(data)
         
-      })
-      this.dataoneobservab = this.share.getOneStudent('67653e7d9356b3dfe220c7fb').subscribe((data: any) => {
-        console.log('Raw data2:', data);
-        this.student = data; // Check the structure of 'data' to ensure it's correct
-      });
+      // })
+      // this.dataoneobservab = this.share.getOneStudent('67653e7d9356b3dfe220c7fb').subscribe((data: any) => {
+      //   console.log('Raw data2:', data);
+      //   this.student = data; // Check the structure of 'data' to ensure it's correct
+      // });
+      // this.share.PatchStudent(this.newst,'67653e8574e4ae3e486a0ac6').subscribe((data:any)=>{
+      //   console.log('update',data)
+      // })
 
   }
   ngOnDestroy(): void {

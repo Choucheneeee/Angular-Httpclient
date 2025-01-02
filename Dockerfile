@@ -25,5 +25,5 @@ COPY --from=build /app/dist/http-client/browser /usr/share/nginx/html
 # Expose port 80
 EXPOSE 80
 
-# Run Nginx server
+# Run Nginx server  
 CMD ["nginx", "-g", "daemon off;"]
